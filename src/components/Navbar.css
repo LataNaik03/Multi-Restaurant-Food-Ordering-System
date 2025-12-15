@@ -1,0 +1,97 @@
+.navbar {
+  background-color: olivedrab;
+  color: white;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  color: #ffeb99;
+}
+
+/* Profile dropdown */
+.profile-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon::after {
+  content: " ▼";
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow */
+.profile-container.open .profile-icon::after {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  width: 120px;
+  z-index: 100;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown item (Logout) */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 15px;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+.logout {
+  color: red;
+  font-weight: bold;
+}
